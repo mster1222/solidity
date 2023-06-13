@@ -447,7 +447,7 @@ public:
 			m_willBeWrittenTo = true;
 	}
 private:
-	Declaration const* m_declaration;
+	Declaration const* m_declaration = nullptr;
 	bool m_willBeWrittenTo = false;
 };
 
@@ -474,7 +474,7 @@ struct SimpleCounterForLoopChecker: public PostTypeChecker::Checker
 
 		auto const* lhsIdentifier = dynamic_cast<Identifier const*>(&cond->leftExpression());
 		auto const* lhsType = dynamic_cast<IntegerType const*>(cond->leftExpression().annotation().type);
-		auto const *commonType = dynamic_cast<IntegerType const*>(cond->annotation().commonType);
+		auto const* commonType = dynamic_cast<IntegerType const*>(cond->annotation().commonType);
 
 		if (lhsIdentifier && lhsType && commonType && *lhsType == *commonType)
 		{
