@@ -162,7 +162,8 @@ public:
 	/// @param _precision Whether to return a precise count (which involves
 	///                   counting immutable references which are only set after
 	///                   a call to `assemble()`) or an approx. count.
-	size_t bytesRequired(size_t _addressLength, Precision _precision = Precision::Precise) const;
+	/// @param _usePush0 Whether to consider the instruction PUSH0 available or not
+	size_t bytesRequired(size_t _addressLength, Precision _precision = Precision::Precise, bool _usePush0 = false) const;
 	size_t arguments() const;
 	size_t returnValues() const;
 	size_t deposit() const { return returnValues() - arguments(); }
@@ -204,11 +205,11 @@ private:
 	mutable std::optional<size_t> m_immutableOccurrences;
 };
 
-inline size_t bytesRequired(AssemblyItems const& _items, size_t _addressLength,  Precision _precision = Precision::Precise)
+inline size_t bytesRequired(AssemblyItems const& _items, size_t _addressLength,  Precision _precision = Precision::Precise, bool _usePush0 = false)
 {
 	size_t size = 0;
 	for (AssemblyItem const& item: _items)
-		size += item.bytesRequired(_addressLength, _precision);
+			size += item.bytesRequired(_addressLength, _precision, _usePush0);
 	return size;
 }
 
