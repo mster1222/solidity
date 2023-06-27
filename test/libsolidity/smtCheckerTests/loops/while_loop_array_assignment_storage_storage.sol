@@ -25,8 +25,7 @@ contract LoopFor2 {
 // ====
 // SMTEngine: all
 // ----
-// Warning 6368: (288-292): CHC: Out of bounds access might happen here.
 // Warning 6368: (459-463): CHC: Out of bounds access happens here.
 // Warning 6328: (452-471): CHC: Assertion violation happens here.
 // Warning 6328: (475-494): CHC: Assertion violation happens here.
-// Info 1391: CHC: 4 verification condition(s) proved safe! Enable the model checker option "show proved safe" to see all of them.
+// Info 1391: CHC: 5 verification condition(s) proved safe! Enable the model checker option "show proved safe" to see all of them.

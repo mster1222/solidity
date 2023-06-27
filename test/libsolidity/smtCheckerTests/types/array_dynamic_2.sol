@@ -12,4 +12,6 @@ contract C
 // ----
 // Warning 6368: (98-106): CHC: Out of bounds access happens here.
 // Warning 6368: (98-109): CHC: Out of bounds access happens here.
-// Info 1391: CHC: 3 verification condition(s) proved safe! Enable the model checker option "show proved safe" to see all of them.
+// Warning 6368: (157-165): CHC: Out of bounds access might happen here.
+// Warning 6368: (157-168): CHC: Out of bounds access might happen here.
+// Info 1391: CHC: 1 verification condition(s) proved safe! Enable the model checker option "show proved safe" to see all of them.
