@@ -4,6 +4,7 @@ Language Features:
  * Allow qualified access to events from other contracts.
 
 Compiler Features:
+ * Code Generator: Fix not entirely deterministic order of functions in unoptimized Yul output (i.e. ``--ir`` on the CLI or ``ir`` in Standard JSON). The order would depend on the C++ compiler used to build the Solidity compiler binary, and resulted in GCC builds generating slightly different (but equivalent) bytecode than Clang builds.
  * Commandline Interface: Add ``--ast-compact-json`` output in assembler mode.
  * Commandline Interface: Add ``--ir-ast-json`` and ``--ir-optimized-ast-json`` outputs for Solidity input, providing AST in compact JSON format for IR and optimized IR.
  * Commandline Interface: Respect ``--optimize-yul`` and ``--no-optimize-yul`` in compiler mode and accept them in assembler mode as well. ``--optimize --no-optimize-yul`` combination now allows enabling EVM assembly optimizer without enabling Yul optimizer.
